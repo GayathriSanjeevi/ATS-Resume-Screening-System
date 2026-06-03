@@ -10,6 +10,7 @@ try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
+nltk.download('punkt_tab')
 
 from nltk.corpus import stopwords
 from nltk import word_tokenize
