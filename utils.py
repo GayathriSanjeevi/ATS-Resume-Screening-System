@@ -1,8 +1,15 @@
-import nltk
 import string
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('punkt_tab')
+import nltk
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
 
 from nltk.corpus import stopwords
 from nltk import word_tokenize
